@@ -174,9 +174,9 @@
         password = beforeUrl.trim();
       }
 
-      // Clean password (take first token and remove trailing dots like GB384903.)
+      // Clean password (take first token, keeping the trailing dot if present)
       if (password) {
-        password = password.split(/\s+/)[0].replace(/[.,]+$/, "");
+        password = password.split(/\s+/)[0];
       }
 
       parsedItems.push({ email, password, url, trailingText });
